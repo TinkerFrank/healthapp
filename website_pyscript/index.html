@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>My First Pyscript Page</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <py-env>
+        - numpy
+        - matplotlib
+        - paths:
+          - /model.py
+    </py-env>
+</head>
+
+<body>
+
+    <py-config>
+        packages = ["matplotlib", "pandas",'seaborn']
+    </py-config>
+
+    <py-script>
+        print('Welcome User')
+    </py-script>
+
+    <h3> Scatterplot with rng inputs</h3>
+    <div id = 'plot'></div>
+    <py-script output="plot">
+        import matplotlib.pyplot as plt
+        from model import generate
+
+        x,y = generate(n=500)
+        ax.scatter(x,y)
+        fig, ax = plt.subplots()
+        ax.scatter(x,y)
+        fig
+
+    </py-script>
+
+    <py-repl id="my-repl" auto-generate="true"></py-repl>
+
+
+    <div id="graph-area"></div>
+</body>
+
+</html>
