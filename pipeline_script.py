@@ -50,7 +50,6 @@ df3 = df.copy() #keep original for df3
 ########################
 
 df = df.dropna()
-
 duplicate_rows_df = df[df.duplicated()]
 print ("Number of duplicate rows: ", duplicate_rows_df.shape)
 df = df[(df >= 0).any(axis=1)]
@@ -89,6 +88,7 @@ print('Generated DF2: succesfully written to df2.csv')
 ########################
 
 dfmean = df.mean()
+df3 = df3[(df3>= 0).any(axis=1)]
 df3 = df3.fillna(dfmean)
 df3 = df.drop_duplicates()
 df3 = df.apply(lambda x: pd.to_numeric(x, errors='coerce') if x.dtype == 'object' else x)
