@@ -37,10 +37,26 @@
 
     <py-script>
         print('Welcome User')
+        x,y = generate(42)
+        print(x,y)
+
+        def calculation(x):
+            # Get paragraph element by id
+            paragraph = Element("output")
+        
+            # Add current time to the paragraph element
+            paragraph.write(x*2)
+            
     </py-script>
 
     <py-repl id="my-repl" auto-generate="true"></py-repl>
 
+    <button py-click="calculation()" id="get-data" class="py-button">Get current time</button>
+    <p id="current-time"></p>
+
+    <p id="output"></p>
+
+        
 
 </body>
 

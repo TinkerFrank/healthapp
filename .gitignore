@@ -8,7 +8,6 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
 develop-eggs/
 dist/
 downloads/
@@ -127,3 +126,43 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+df1.csv
+df2.csv
+df3.csv
+df4.csv
+LICENSE
+lifespan.csv
+rest_server_new/browse.sh
+rest_server_new/install.sh
+rest_server_new/migrate.sh
+rest_server_new/refresh_db.sh
+rest_server_new/requirements.txt
+rest_server_new/start_rest_server.sh
+rest_server_new/medisch_centrum_randstad/manage.py
+rest_server_new/medisch_centrum_randstad/data/data.csv
+rest_server_new/medisch_centrum_randstad/medisch_centrum_randstad/__init__.py
+rest_server_new/medisch_centrum_randstad/medisch_centrum_randstad/asgi.py
+rest_server_new/medisch_centrum_randstad/medisch_centrum_randstad/settings.py
+rest_server_new/medisch_centrum_randstad/medisch_centrum_randstad/urls.py
+rest_server_new/medisch_centrum_randstad/medisch_centrum_randstad/wsgi.py
+rest_server_new/medisch_centrum_randstad/rest_api/__init__.py
+rest_server_new/medisch_centrum_randstad/rest_api/admin.py
+rest_server_new/medisch_centrum_randstad/rest_api/apps.py
+rest_server_new/medisch_centrum_randstad/rest_api/models.py
+rest_server_new/medisch_centrum_randstad/rest_api/serializers.py
+rest_server_new/medisch_centrum_randstad/rest_api/tests.py
+rest_server_new/medisch_centrum_randstad/rest_api/urls.py
+rest_server_new/medisch_centrum_randstad/rest_api/views.py
+rest_server_new/medisch_centrum_randstad/rest_api/favicon/android-chrome-192x192.png
+rest_server_new/medisch_centrum_randstad/rest_api/favicon/android-chrome-512x512.png
+rest_server_new/medisch_centrum_randstad/rest_api/favicon/apple-touch-icon.png
+rest_server_new/medisch_centrum_randstad/rest_api/favicon/favicon-16x16.png
+rest_server_new/medisch_centrum_randstad/rest_api/favicon/favicon-32x32.png
+rest_server_new/medisch_centrum_randstad/rest_api/favicon/favicon.ico
+rest_server_new/medisch_centrum_randstad/rest_api/favicon/site.webmanifest
+rest_server_new/medisch_centrum_randstad/rest_api/management/commands/__init__.py
+rest_server_new/medisch_centrum_randstad/rest_api/management/commands/load_data.py
+rest_server_new/medisch_centrum_randstad/rest_api/migrations/__init__.py
+rest_server_new/medisch_centrum_randstad/rest_api/migrations/0001_initial.py
+rest_server_new/medisch_centrum_randstad/rest_api/migrations/0002_alter_netlify_alcohol_alter_netlify_exercise_and_more.py

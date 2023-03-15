@@ -9,8 +9,9 @@ from sklearn import linear_model
 from sklearn.model_selection import train_test_split
 import math
 import sqlite3
+import pickle
 
-#import model data from pipeline, in this case CSV:
+#import model data from pipeline, in this case CSV in same folder 
 df = pd.read_csv('df4.csv',sep=',',skipinitialspace=True)
 df = df.drop('Unnamed: 0', axis=1)
 
@@ -38,12 +39,12 @@ intercept = regr.intercept_
 
 #Store variables in SQL table
 dbConnection = sqlite3.connect('db.sqlite3')
-
-df_coef = pd.DataFrame({'coef': coef,'intercept': intercept,'rsquared':score,'rmse':rmse})
+dfdrop = df.drop(columns=['lifespan'])
+df_coef = pd.DataFrame({'feature':dfdrop.columns,'coef': coef,'intercept': intercept,'rsquared':score,'rmse':rmse})
 df_coef.to_sql('coef', if_exists='replace', con=dbConnection)
 
 
-#pickle.dump(regressor,open(exportFile,'wb'))
+pickle.dump(regr,open('state.bin','wb'))
 
 dbConnection.close()
 

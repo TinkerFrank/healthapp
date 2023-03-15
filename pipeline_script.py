@@ -92,7 +92,7 @@ df3 = df3[(df3>= 0).any(axis=1)]
 df3 = df3.fillna(dfmean)
 df3 = df.drop_duplicates()
 df3 = df.apply(lambda x: pd.to_numeric(x, errors='coerce') if x.dtype == 'object' else x)
-df3.astype('float64').dtypes
+df3 = df3.astype('float64').dtypes
 
 Q1 = df3.quantile(0.25)
 Q3 = df3.quantile(0.75)
