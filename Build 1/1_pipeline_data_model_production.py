@@ -4,7 +4,7 @@
 # Imports
 import logging
 import pandas as pd
-# import requests
+import requests
 import sqlite3
 from sklearn import linear_model
 from sklearn.model_selection import train_test_split
@@ -45,16 +45,24 @@ csvFile = "rest_server_new/medisch_centrum_randstad/data/data.csv"
 ### Read from SQlite3 db ###
 ############################
 
-## saving the new df to SQL
-dbConnection = sqlite3.connect(dbName)
+#download db from github
+db = requests.get('https://github.com/TinkerFrank/healthapp/raw/main/Build%201/db.sqlite3')
+open('db.sqlite3', 'wb').write(db.content)
 
-# query db and write to pd:
-dfFromDB = pd.read_sql_query(f"SELECT * FROM {'rest_api_netlify'}", dbConnection)
-# sql adds index, remove:
+dbConnection = sqlite3.connect('db.sqlite3')
+
+dfFromDB = pd.read_sql_query(f"SELECT * FROM {'rest_api_netlify'}", dbConnection )
 df = dfFromDB.drop('id', axis=1)
-pd.set_option('display.max_columns', 10)
-# print(df.head())
+#df.head()
 
+# ## establish SQL db connection
+# dbConnection = sqlite3.connect(dbName)
+# # query db and write to pd:
+# dfFromDB = pd.read_sql_query(f"SELECT * FROM {'rest_api_netlify'}", dbConnection)
+# # sql adds index, remove:
+# df = dfFromDB.drop('id', axis=1)
+# pd.set_option('display.max_columns', 10)
+# # print(df.head())
 
 #########################
 ### Regulair cleaning ### 
