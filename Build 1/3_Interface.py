@@ -5,6 +5,7 @@ import logging
 import pandas as pd
 import sys
 
+sys.tracebacklimit = 0 #hide errors, scary for the user xD
 with open("regr_model.bin", "rb") as f:
     reg = pickle.load(f)
 
@@ -16,22 +17,22 @@ def inputDigit(message, acceptableRange):
     i = 0
 
     while not (inputStr.isdigit() and withinRange) and i < numberOfTries:
-        try:
-            inputStr = input(message)
-
-            if inputStr.isdigit():
+        inputStr = input(message)
+        if inputStr.isdigit():
                 inputNum = float(inputStr)
 
                 if inputNum in acceptableRange:
                     return inputNum
                 else:
                     print('not in range:', acceptableRange)
-            else:
-                print('only whole numbers accepted')
+        else:
+            print('only whole numbers accepted')
             i += 1
-        except:
-            print("\nToo many tries, restart program to try again.")
-        #trying to not show the error WIP
+
+        # explain why the program exits
+        if i == 3: 
+            raise Exception("\nToo many tries, restart program to try again.")
+
 
 # range = min - 2*std and max + 2*std
 genetic = float(inputDigit('Vul de genetische leeftijd in:', range(55, 110)))
